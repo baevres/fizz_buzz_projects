@@ -18,10 +18,8 @@ My answer:
 3.2) if there are any symbol (.,?!"' etc) near word and word replaced to 'Buzz' - need to save symbol?
 My answer:
 3.1) operation 'Fizz' have bigger priority as it indicated first.
-3.2) any symbols don`t save as it didn`t need in requirements.
+3.2) any symbols won`t be saved as it don`t need in requirements.
 
-4) requirement about method 'getOverlappings' - I didn`t understand: method must return number of coincidences for incoming string or execute main algoritm?
-My answer: method 'getOverlappings' checks requirements "7 <= s <= 100" and "input data is a string". If requirements passed method calls external function 'fizz_buzz' which return new string. Also method will save next attributes:
-* self.new_string - for new string;
-* self.countFizz - count of all 'Fizz' in new string;
-* self.countBuzz - count of all 'Buzz' in new string.
+4) requirement about method 'getOverlappings' - I didn`t understand that part: "method must return number OR coincidences for incoming string".
+May be means "method must return number OF coincidences for incoming string"?
+My answer: method 'getOverlappings' return number OF coincidences for incoming string.

@@ -4,12 +4,13 @@ Requirements:
 2) string contain only lowercase letters
 3) every third word replaced on 'Fizz'
 4) every fifths letter in word (if len(word) >= 5) replaced on 'Buzz'
+5) method getOverlappings from class FizzBuzzDetector returns number of coincidences for incoming string
 
 This module has 3 positive and 3 negative tests.
 Positive tests contain requirements:
-1) (1), (2), (4); len(string) == 7
-2) (1), (2), (3) and (4); len(string) == 100
-3) (1), (2), (3) and (4); len(string) == 53
+1) (1), (2), (4), (5); len(string) == 7
+2) all - (1-5); len(string) == 100
+3) all - (1-5); len(string) == 53
 
 Negative tests contain requirements:
 1) (1); len(string) == 6
@@ -37,8 +38,8 @@ negative_ids = ['len == 6', 'len == 101']
 second_negative_param = (1234765, 'Type of input value is not a string.')
 
 
-def setup_cls(cls):
-    instance = cls()
+def setup_cls(cls, string):
+    instance = cls(string)
     return instance
 
 
@@ -50,11 +51,12 @@ def positive_params_test(request):
 
 
 def test_positive(positive_params_test):
-    inst = setup_cls(FizzBuzzDetector)
     (input_string, expected_string) = positive_params_test
-    result = inst.getOverlappings(input_string)
-    print(f'input: {input_string}, expected: {expected_string}, result: {result}')
-    assert result == expected_string
+    result = setup_cls(FizzBuzzDetector, input_string)
+    print(f'input: {input_string}, expected: {expected_string}, result: {result.new_string}')
+    assert result.new_string == expected_string
+    assert result.getOverlappings() == f'"Fizz" in string - {result.new_string.count("Fizz")}, ' \
+                                     f'"Buzz" in string - {result.new_string.count("Buzz")}'
 
 
 @pytest.fixture(scope='function',
@@ -65,20 +67,18 @@ def negative_params_test(request):
 
 
 def test_negative(negative_params_test):
-    inst = setup_cls(FizzBuzzDetector)
     (input_string, expected_string) = negative_params_test
     with pytest.raises(ValueError) as exc:  # exc => exception
-        result = inst.getOverlappings(input_string)
+        result = setup_cls(FizzBuzzDetector, input_string)
     exc_message = exc.value.args[0]
     print(f'input: {input_string}, expected: {expected_string}, result: {exc_message}')
     assert exc_message == expected_string
 
 
 def test_second_negative():
-    inst = setup_cls(FizzBuzzDetector)
     (input_string, expected_string) = second_negative_param
     with pytest.raises(TypeError) as exc:
-        result = inst.getOverlappings(input_string)
+        result = setup_cls(FizzBuzzDetector, input_string)
     exc_message = exc.value.args[0]
     print(f'input: {input_string}, expected: {expected_string}, result: {exc_message}')
     assert exc_message == expected_string
