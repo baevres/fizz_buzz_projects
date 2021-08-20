@@ -20,6 +20,6 @@ My answer:
 3.1) operation 'Fizz' have bigger priority as it indicated first.
 3.2) any symbols won`t be saved as it don`t need in requirements.
 
-4) requirement about method 'getOverlappings' - I didn`t understand that part: "method must return number OR coincidences for incoming string".
+4) requirement about method 'getOverlappings' - I didn`t understand next part: "method must return number OR coincidences for incoming string".
 May be means "method must return number OF coincidences for incoming string"?
 My answer: method 'getOverlappings' return number OF coincidences for incoming string.
