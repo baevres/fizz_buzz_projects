@@ -6,7 +6,7 @@ In realisation appeared next question:  P.s.: I will refer to number of requirem
 My answer:
 1.1) on input gives string.
 1.2) if string don`t match to requirement will called exception ValueError with message: 'Invalid length of input string. Length must be: 7 <= string <= 100.'.
-1.3) if input data is not a string will call exception TypeError with message: 'Type of input value is not a string.'.
+1.3) if input data is not a string will called exception TypeError with message: 'Type of input value is not a string.'.
 
 2) requirement "string contain only lowercase letters":
 2.1) 'Fizz' and 'Buzz' in new string must have lowercase letters too or not?
