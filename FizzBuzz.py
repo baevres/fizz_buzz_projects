@@ -57,17 +57,10 @@ class FizzBuzzDetector:
 			raise TypeError('Type of input value is not a string.')
 
 	def getOverlappings(self):
-		import re
-		pattern1 = r'Fizz'
-		pattern2 = r'Buzz'
-
-		result1 = re.findall(pattern1, self.new_string)
-		if result1:
-			self.countFizz = len(result1)
-
-		result2 = re.findall(pattern2, self.new_string)
-		if result2:
-			self.countBuzz = len(result2)
+		pattern1 = 'Fizz'
+		pattern2 = 'Buzz'
+                self.countFizz = self.new_string.count(pattern1)
+                self.countBuzz = self.new_string.count(pattern2)
 
 		return f'"Fizz" in string - {self.countFizz}, "Buzz" in string - {self.countBuzz}'
 
