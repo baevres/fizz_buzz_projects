@@ -1,11 +1,11 @@
 In realisation appeared next question:  P.s.: I will refer to number of requirements which I rewrite in test.py
 1) requirement "7 <= s <= 100":
-1.1) number of input string or number of words in string must be match to requirement?
-1.2) if input data don`t match requirement need to call exception?
-1.3) need to take into consider situation when input data is not a string?
+1.1) There are number of input string or number of words in string must be match to requirement?
+1.2) If input data don`t match to requirement, is it need to call exception?
+1.3) Is it need to take into consider situation when input data is not a string?
 My answer:
 1.1) on input gives string.
-1.2) if string don`t match to requirement will call exception ValueError with message: 'Invalid length of input string. Length must be: 7 <= string <= 100.'.
+1.2) if string don`t match to requirement will called exception ValueError with message: 'Invalid length of input string. Length must be: 7 <= string <= 100.'.
 1.3) if input data is not a string will call exception TypeError with message: 'Type of input value is not a string.'.
 
 2) requirement "string contain only lowercase letters":
